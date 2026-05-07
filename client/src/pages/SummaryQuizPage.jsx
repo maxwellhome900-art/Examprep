@@ -117,7 +117,7 @@ export default function SummaryQuizPage() {
         <h1 className="page-title page-title--gradient">Summary, quiz &amp; flashcards</h1>
         <div className="tagline-stack">
           <p className="tagline-line">
-            Paste raw notes—Gemini on the server spins up a structured summary and <strong>25</strong> fresh
+            Paste raw notes—Gemini on the server spins up a structured summary and <strong>10</strong> fresh
             multiple-choice questions in one shot.
           </p>
           <p className="tagline-line tagline-line--accent">
@@ -174,7 +174,7 @@ export default function SummaryQuizPage() {
             {loading && (
               <div className="generate-loading">
                 <div className="generate-loading__spinner" aria-hidden />
-                <span>CertPrep is building your summary and 25 questions…</span>
+                <span>CertPrep is building your summary and 10 questions…</span>
               </div>
             )}
 
