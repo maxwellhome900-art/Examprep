@@ -28,7 +28,7 @@ export default function HomePage() {
         <CardLink
           to="/summary-quiz"
           title="Summary, Quiz & Flashcards"
-          description="Drop in notes—Gemini returns a polished summary, a 25-question quiz, plus flip-ready Linux+ decks."
+          description="Drop in notes—Gemini returns a polished summary, a 10-question quiz, plus flip-ready Linux+ decks."
           icon="✨"
         />
         <CardLink
