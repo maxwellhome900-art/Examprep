@@ -1,0 +1,212 @@
+.flash-deck {
+  --flash-radius: 14px;
+  --flash-accent: #5eead4;
+  --flash-accent-dim: rgba(94, 234, 212, 0.12);
+  position: relative;
+  border-radius: var(--flash-radius);
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(165deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.flash-deck::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--flash-accent), #a78bfa);
+  opacity: 0.9;
+}
+
+.flash-deck__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.15rem 0.85rem;
+}
+
+.flash-deck__badge {
+  flex-shrink: 0;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--flash-accent);
+  background: var(--flash-accent-dim);
+  border: 1px solid rgba(94, 234, 212, 0.28);
+  padding: 0.28rem 0.5rem;
+  border-radius: 6px;
+  margin-top: 0.15rem;
+}
+
+.flash-deck__title {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.flash-deck__desc {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.flash-deck__card-wrap {
+  padding: 0 1.15rem 0.5rem;
+}
+
+.flash-deck__side-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.45rem;
+}
+
+.flash-card {
+  perspective: 1200px;
+  width: 100%;
+  min-height: 168px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  display: block;
+}
+
+.flash-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: var(--flash-radius);
+}
+
+.flash-card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 168px;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+  cursor: pointer;
+  border-radius: var(--flash-radius);
+}
+
+.flash-card.flipped .flash-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flash-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--flash-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.25rem 1.1rem;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.flash-face.front {
+  background: linear-gradient(160deg, #1e293b 0%, #0f172a 55%, #0c1220 100%);
+  color: #f1f5f9;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.flash-face.back {
+  transform: rotateY(180deg);
+  background: linear-gradient(160deg, #042f2e 0%, #0f172a 50%, #134e4a 100%);
+  color: #ccfbf1;
+  font-family: var(--mono);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  border-color: rgba(45, 212, 191, 0.35);
+  box-shadow:
+    inset 0 1px 0 rgba(94, 234, 212, 0.12),
+    0 0 0 1px rgba(45, 212, 191, 0.08);
+}
+
+.flash-deck__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  padding: 0 1.15rem 0.65rem;
+}
+
+.flash-deck__counter {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.flash-deck__bar {
+  flex: 1;
+  min-width: 72px;
+  max-width: 140px;
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.2);
+  overflow: hidden;
+}
+
+.flash-deck__bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--flash-accent));
+  transition: width 0.35s ease;
+}
+
+.flash-deck__footer {
+  padding: 0.65rem 1.15rem 1.1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.flash-deck__footer .btn {
+  flex: 1;
+  min-width: 108px;
+  justify-content: center;
+}
+
+.flash-deck__hint {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--muted);
+  order: -1;
+  padding-bottom: 0.35rem;
+}
+
+@media (min-width: 520px) {
+  .flash-deck__footer {
+    flex-wrap: nowrap;
+  }
+
+  .flash-deck__hint {
+    order: 0;
+    width: auto;
+    flex: 1;
+    text-align: left;
+    padding-bottom: 0;
+  }
+}

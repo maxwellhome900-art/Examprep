@@ -1,0 +1,128 @@
+.card-link {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.4rem 1.35rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: linear-gradient(155deg, rgba(19, 27, 38, 0.95) 0%, rgba(15, 23, 42, 0.88) 100%);
+  color: inherit;
+  text-decoration: none;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    border-color var(--dur-med) var(--ease-out),
+    transform var(--dur-med) var(--ease-spring),
+    box-shadow var(--dur-med) var(--ease-out);
+}
+
+.card-link::after {
+  content: "";
+  position: absolute;
+  inset: -40% -30%;
+  background: linear-gradient(
+    115deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.06) 48%,
+    rgba(129, 140, 248, 0.12) 52%,
+    transparent 65%
+  );
+  transform: translateX(-60%) rotate(8deg);
+  opacity: 0;
+  transition: opacity 0.35s ease, transform 0.55s var(--ease-out);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card-link:hover::after {
+  opacity: 1;
+  transform: translateX(20%) rotate(8deg);
+}
+
+.card-link:hover {
+  border-color: rgba(74, 163, 245, 0.45);
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.38),
+    0 0 0 1px rgba(74, 163, 245, 0.15);
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-link,
+  .card-link::after {
+    transition: none;
+  }
+
+  .card-link:hover {
+    transform: none;
+  }
+
+  .card-link:hover::after {
+    opacity: 0;
+  }
+}
+
+.card-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.card-link-icon {
+  position: relative;
+  z-index: 1;
+  font-size: 1.75rem;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: transform var(--dur-med) var(--ease-spring);
+}
+
+.card-link:hover .card-link-icon {
+  transform: scale(1.12) rotate(-4deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-link:hover .card-link-icon {
+    transform: none;
+  }
+}
+
+.card-link-body {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-width: 0;
+}
+
+.card-link-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.card-link-desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.card-link-chevron {
+  position: relative;
+  z-index: 1;
+  color: var(--accent);
+  font-size: 1.25rem;
+  align-self: center;
+  flex-shrink: 0;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.card-link:hover .card-link-chevron {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-link:hover .card-link-chevron {
+    transform: none;
+  }
+}

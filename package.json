@@ -1,0 +1,22 @@
+{
+  "name": "examprep-cert-platform",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "description": "Lightweight IT certification study platform (React + Express)",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:client": "npm run dev --prefix client",
+    "dev:server": "npm run dev --prefix server",
+    "build": "npm run build --prefix client",
+    "start": "npm run build && npm run start --prefix server",
+    "start:server": "npm run start --prefix server",
+    "smoke-api": "npm run smoke-api --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

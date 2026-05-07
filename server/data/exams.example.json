@@ -1,0 +1,19 @@
+{
+  "exams": [
+    {
+      "id": "sample-linux-plus-1",
+      "title": "Sample Linux+ practice exam",
+      "description": "Replace with real exams. Each question needs four options and correctIndex 0–3.",
+      "timeMinutes": 90,
+      "questions": [
+        {
+          "id": "sample-q1",
+          "question": "Which command prints the current working directory?",
+          "options": ["pwd", "cd", "ls", "whoami"],
+          "correctIndex": 0,
+          "explanation": "pwd prints the working directory path."
+        }
+      ]
+    }
+  ]
+}

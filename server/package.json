@@ -1,0 +1,20 @@
+{
+  "name": "examprep-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node index.js",
+    "dev:watch": "node --watch index.js",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "import-exams": "node scripts/dion-txt-to-exams-json.mjs",
+    "smoke-api": "node scripts/api-smoke.mjs"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}
