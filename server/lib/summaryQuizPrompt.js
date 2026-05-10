@@ -17,7 +17,7 @@ ${notesBlock}
 ## Hard requirements
 - Scope is strictly CompTIA Linux+.
 - Return valid JSON only. No markdown, prose, or code fences.
-- Include exactly 25 multiple-choice questions.
+- Include exactly 10 multiple-choice questions.
 - Every question must have 4 options.
 - "correctIndex" must be an integer from 0 to 3.
 
