@@ -220,7 +220,7 @@ app.post("/api/generate-summary-quiz", async (req, res) => {
       return;
     }
     if (questions.length !== 25) {
-      res.status(502).json({ error: "The model did not return exactly 25 questions. Please regenerate." });
+      res.status(502).json({ error: "The model did not return exactly 10 questions. Please regenerate." });
       return;
     }
 
